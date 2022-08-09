@@ -62,6 +62,90 @@ class _FoodPageBodyState extends State<FoodPageBody> {
           activeShape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0)),
         ),
       ),
+        //popular text
+        SizedBox(height: Dimensions.height30),
+        Container(
+          margin: EdgeInsets.only(left: Dimensions.width30),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.end,
+            children: [
+              BigText(text: "Populaire"),
+              SizedBox(width: Dimensions.width10),
+              Container(
+                margin: const EdgeInsets.only(bottom: 3),
+                child: BigText(text: ".", color: Colors.black26)
+              ),
+              SizedBox(width: Dimensions.width10),
+              Container(
+                margin: const EdgeInsets.only(bottom: 1),
+                child: SmallText(text: "Faites votre choix"),
+              )
+            ],
+          ),
+        ),
+
+        // list of food image
+
+          ListView.builder(
+            physics: NeverScrollableScrollPhysics(),
+              shrinkWrap: true,
+              itemCount: 10,
+              itemBuilder: (context, index) {
+                return Container(
+                  margin: EdgeInsets.only(left: Dimensions.width20, right: Dimensions.width20, top: Dimensions.height10),
+                  child: Row(
+                    children: [
+                      Container(
+                        width:Dimensions.listViewImg,
+                        height: Dimensions.listViewImg,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(Dimensions.radius20),
+                            color: Colors.white38,
+                            image: DecorationImage(
+                              fit: BoxFit.cover,
+                                image: AssetImage(
+                                    "assets/img/pizza-basilic.jpg"
+                                )
+                            )
+                        ),
+                      ),
+                      Expanded(
+                        child: Container(
+                          height: Dimensions.listViewTextContainer,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.only(
+                              topRight: Radius.circular(Dimensions.radius20),
+                              bottomRight: Radius.circular(Dimensions.radius20),
+                            ),
+                            color: Colors.white,
+                          ),
+                          child: Padding(
+                            padding: EdgeInsets.only(left: Dimensions.width10, right: Dimensions.width10),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                BigText(text: "Duo Tomate-Basilic et tout le tralala"),
+                                SizedBox(height: Dimensions.height10),
+                                SmallText(text: "Tomate, basilic, mozzarella, olives, origan, camembert, magie, pied de cochons, pincée de sel, cheddar, droide"),
+                                SizedBox(height: Dimensions.height10),
+                                /* Row(
+                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    IconAndText(icon: Icons.circle_sharp, text: "Normal", iconColor: AppColors.iconColor1),
+                                    IconAndText(icon: Icons.location_on, text: "1.7Km", iconColor: AppColors.mainColor),
+                                    IconAndText(icon: Icons.access_time_filled_rounded, text: "27 min", iconColor: AppColors.iconColor2),
+                                  ],
+                                )*/
+                              ],
+                            ),
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
+                );
+              }),
       ],
     );
   }
