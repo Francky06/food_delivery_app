@@ -1,10 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:pizza_app/home/food_page_body.dart';
 import 'package:pizza_app/utils/colors.dart';
 import 'package:pizza_app/utils/dimensions.dart';
 import 'package:pizza_app/widgets/big_text.dart';
 import 'package:pizza_app/widgets/small_text.dart';
+import 'food_page_body.dart';
 
 class MainFoodPage extends StatefulWidget {
   const MainFoodPage({Key? key}) : super(key: key);
